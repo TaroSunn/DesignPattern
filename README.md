@@ -58,7 +58,7 @@ yarn add babel-core babel-polyfill babel-preset-es2015 babel-preset-latest babel
 yarn add babel-core babel-polyfill babel-preset-es2015 babel-preset-latest babel-loader@7 -D
 ```
 
-8.z
+8.x
 ```
 yarn add babel-loader @babel/core @babel/preset-env babel-polyfill -D
 ```
