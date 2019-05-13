@@ -85,3 +85,50 @@ module: {
   ]
 }
 ```
+
+## 面向对象
+
+### 继承
+
+``` javascript
+// 定义父类
+class Animal {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+  eat() {
+    console.log(`${this.name} eat`)
+  }
+  speak() {
+    console.log(`${this.name} ${this.age}`)
+  }
+}
+
+// 子类继承父类
+class Cat extends Animal {
+  constructor(name, age, number) {
+    super(name, age) // 继承父类属性
+    this.number = number
+  }
+  sleep() {
+    console.log(`${this.name} ${this.age} ${this.number}`)
+  }
+}
+
+const black = new Cat('cat', '2', 10)
+sleep()
+eat()
+speak()
+```
+将公共方法抽离，提高复用，减少冗余
+
+### 封装
+
+`private`私有
+
+`protected`
+
+`public`
+
+### 多态

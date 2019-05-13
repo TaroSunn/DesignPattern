@@ -1,11 +1,28 @@
-class Person {
-  constructor(name) {
+class Animal {
+  constructor(name, age) {
     this.name = name
+    this.age = age
   }
-  getName() {
-    return this.name
+  eat() {
+    console.log(`${this.name} eat`)
+  }
+  speak() {
+    console.log(`${this.age}`)
   }
 }
 
-let p = new Person('Taro Sun')
-console.log(p.getName())
+class Cat extends Animal {
+  constructor(name, age, number) {
+    super(name, age)
+    this.name = name
+  }
+  sleep() {
+    console.log(`${this.name} ${this.age} ${this.number}`)
+  }
+}
+
+const black = new Cat('black', '1', 2)
+
+black.eat()
+black.speak()
+black.sleep()
