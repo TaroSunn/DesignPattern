@@ -1,28 +1,26 @@
-class Animal {
-  constructor(name, age) {
-    this.name = name
-    this.age = age
-  }
-  eat() {
-    console.log(`${this.name} eat`)
-  }
-  speak() {
-    console.log(`${this.age}`)
-  }
+function loadImg(src) {
+  let promise = new Promise((resolve, reject) => {
+    let img = document.createElement('img')
+    img.onload = () => {
+      resolve(img)
+    }
+    img.onerror = () =>{
+      reject('图片加载失败')
+    }
+    img.src = src
+  })
+  return promise
 }
 
-class Cat extends Animal {
-  constructor(name, age, number) {
-    super(name, age)
-    this.name = name
-  }
-  sleep() {
-    console.log(`${this.name} ${this.age} ${this.number}`)
-  }
-}
+let src = 'https://www.baidu.com/img/bd_logo1.png'
 
-const black = new Cat('black', '1', 2)
+let result = loadImg(src)
 
-black.eat()
-black.speak()
-black.sleep()
+result.then((img)=>{
+  alert(`${img.height}`)
+  return img
+}).then((img)=>{
+  alert(`${img}`)
+}).catch((err)=>{
+  alert(err)
+})
