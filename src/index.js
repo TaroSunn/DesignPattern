@@ -1,26 +1,9 @@
-function loadImg(src) {
-  let promise = new Promise((resolve, reject) => {
-    let img = document.createElement('img')
-    img.onload = () => {
-      resolve(img)
-    }
-    img.onerror = () =>{
-      reject('图片加载失败')
-    }
-    img.src = src
-  })
-  return promise
-}
+import {Creator} from './工厂模式'
 
-let src = 'https://www.baidu.com/img/bd_logo1.png'
+const creator = new Creator()
 
-let result = loadImg(src)
+const p = creator.create('p')
 
-result.then((img)=>{
-  alert(`${img.height}`)
-  return img
-}).then((img)=>{
-  alert(`${img}`)
-}).catch((err)=>{
-  alert(err)
-})
+p.init()
+
+p.fun1()
